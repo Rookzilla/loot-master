@@ -11,7 +11,7 @@ export const generateLootItems = (spendingCash) => {
     };
 
     // Continue selecting items until spending cash is exhausted or limit is reached
-    while (remainingCash > 0 && lootItems.length < 10) { // Limit to 10 items
+    while (remainingCash > 0 && lootItems.length < 20) { // Limit to 10 items
         // Select a random item from the adventuring gear list
         const adventuringGearItem = selectRandomItem(ADVENTURING_GEAR);
         if (parseInt(adventuringGearItem.cost) <= remainingCash) {
@@ -21,7 +21,7 @@ export const generateLootItems = (spendingCash) => {
     }
 
     // Continue selecting items until spending cash is exhausted or limit is reached
-    while (remainingCash > 0 && lootItems.length < 10) { // Limit to 10 items
+    while (remainingCash > 0 && lootItems.length < 20) { // Limit to 10 items
         // Select a random item from the weaponry list
         const weaponryItem = selectRandomItem(WEAPONRY);
         if (parseInt(weaponryItem.cost) <= remainingCash) {
