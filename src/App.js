@@ -7,8 +7,9 @@ const App = () => {
   return (
     <div className="LootMaster">
       <header className="App-header">
-        <p className='Title-text'>Your enemies lay vanquished! What fortune and riches lie in store? </p>
+        <p className='Title-text'>What riches lie in store?</p>
         <InputMenu />
+        <p className='Barcode-text'>andrew brown productions</p>
       </header>
     </div>
   );

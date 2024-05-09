@@ -1,65 +1,86 @@
-import * as CSS from './inputCard.styles.js';
 import React from 'react';
+import * as CSS from './inputCard.styles.js';
 import { creatureOptions } from './inputCard.consts.jsx';
 
 const InputCard = ({ index, formData, handleDeleteCard, handleInputChange }) => {
-  const {
-    challengeRating,
-  } = formData;
+    
+    return (
+        <div key={`inputCard-${index}`} style={CSS.FORM_CONTAINER_STYLES}>
 
-  const handleChange = (fieldName, value) => {
-    handleInputChange(index, fieldName, value);
-};
+            <div className={`creatureName-${index}`} style={CSS.STYLED_INPUT_WRAPPER}>
+                <label style={CSS.LABEL} htmlFor={`creatureName${index}`}>
+                    Name:
+                </label>
+                <input
+                    style={CSS.INPUT}
+                    type="text"
+                    id={`creatureName${index}`}
+                    name={`creatureName${index}`}
+                    value={formData.creatureName}
+                    onChange={(e) => handleInputChange(index, 'creatureName', e.target.value)}
+                />
+            </div>
 
-  return (
-    <div
-      key={`inputCard-${index}`}
-      style={CSS.FORM_CONTAINER_STYLES}
-    >
-      <div className={`creatureType-${index}`} style={CSS.STYLED_INPUT_WRAPPER}>
-        <label style={CSS.LABEL} htmlFor={`creatureType${index}`}>
-          Type:
-        </label>
-        <select style={CSS.INPUT} id={`creatureType${index}`} name={`creatureType${index}`}>
-          {creatureOptions}
-        </select>
-      </div>
+            <div className={`creatureType-${index}`} style={CSS.STYLED_INPUT_WRAPPER}>
+                <label style={CSS.LABEL} htmlFor={`creatureType${index}`}>
+                    Type:
+                </label>
+                <select 
+                    style={CSS.SELECT}
+                    id={`creatureType${index}`}
+                    name={`creatureType${index}`}
+                    value={formData.creatureType}
+                    onChange={(e) => handleInputChange(index, 'creatureType', e.target.value)}
+                >
+                    {creatureOptions}
+                </select>
+            </div>
 
-      <div className={`challangeRating-${index}`} style={CSS.STYLED_INPUT_WRAPPER}>
-        <label style={CSS.LABEL} htmlFor={`challengeRating${index}`}>
-          CR:
-        </label>
-        <input
-          style={CSS.INPUT}
-          type="number"
-          id={`challengeRating${index}`}
-          name={`challengeRating${index}`}
-          placeholder='1'
-          min="0"
-          max="20"
-          value={challengeRating}
-          onChange={(e) => handleChange('challengeRating', e.target.value)}
-        />
-      </div>
+            <div className={`challangeRating-${index}`} style={CSS.STYLED_INPUT_WRAPPER}>
+                <label style={CSS.LABEL} htmlFor={`challengeRating${index}`}>
+                    CR:
+                </label>
+                <input
+                    style={CSS.INPUT}
+                    type="number"
+                    id={`challengeRating${index}`}
+                    name={`challengeRating${index}`}
+                    placeholder='1'
+                    min="0"
+                    max="20"
+                    value={formData.challengeRating}
+                    onChange={(e) => handleInputChange(index, 'challengeRating', e.target.value)}
+                />
+            </div>
+            
+            <div className={`civilianFlag-${index}`} style={CSS.STYLED_INPUT_WRAPPER}>
+                <label 
+                    style={CSS.LABEL}
+                >
+                    Civilian:
+                </label>
+                <input 
+                
+                    style={CSS.CHECKBOX} 
+                    type="checkbox" 
+                    id={`civilian${index}`} 
+                    name={`civilian${index}`}
+                    checked={
+                        // if creature is humanoid & a civilian, check the checkbox, otherwise, uncheck it
+                        formData.civilian
+                    }
+                    onChange={(e) => handleInputChange(index, 'civilian', e.target.checked)} 
+                />
+            </div>
 
-      <div className={`civilianFlag-${index}`} style={CSS.STYLED_INPUT_WRAPPER}>
-        <label style={CSS.LABEL} htmlFor={`citizen${index}`}>
-          Civilian:
-        </label>
-        <input style={CSS.CHECKBOX} type="checkbox" id={`citizen${index}`} name={`citizen${index}`} />
-      </div>
-
-      {index !== 0 && (
-        <img
-          alt="delete entry"
-          src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
-          style={CSS.ICON}
-          onClick={() => handleDeleteCard()}
-        />
-      )}
-
-    </div>
-  );
+            <img
+                    alt="delete entry"
+                    src="bin.png"
+                    style={CSS.ICON}
+                    onClick={() => handleDeleteCard()}
+                />
+        </div>
+    );
 };
 
 export default InputCard;

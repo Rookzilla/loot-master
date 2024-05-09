@@ -1,13 +1,16 @@
 // Styled component for the form container
+import { BODY_COLOR } from "../../consts/staticConsts";
+
 export const FORM_CONTAINER_STYLES = {
-    backgroundColor: "#BB6B5A",
+    backgroundColor: BODY_COLOR,
     borderRadius: "10px", /* Rounded corners */
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", /* Shadow effect */
     display: "flex",
     flexDirection: "row",
     marginBottom: '10px',
     alignItems: "flex-end",
-    width: "380px",
+    width: "480px",
+    padding: "0 20px",
 
   };
 // Styled component for the label
@@ -25,6 +28,15 @@ export const INPUT = {
     padding: "3px",
     width: "100%",
     margin: 0,
+}
+
+// Styled component for the select dropdown
+export const SELECT = {
+    display: "flex",
+    padding: "3px",
+    width: "100%",
+    margin: 0,
+    minWidth: "120px",
 }
 
 export const CHECKBOX = {

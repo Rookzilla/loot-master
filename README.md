@@ -14,11 +14,11 @@ Harnessing the power of advanced randomization algorithms, LootRandomizer Pro en
 
 ### 2. Seamless Integration with React Frontend
 
-Our sleek and intuitive React frontend provides a seamless user experience, allowing Dungeon Masters and players to effortlessly interact with the loot randomization process. With its responsive design and user-friendly interface, LootRandomizer Pro puts the power of dynamic loot generation at your fingertips.
+This sleek and intuitive React frontend provides a seamless user experience, allowing Dungeon Masters and players to effortlessly interact with the loot randomization process. With its responsive design and user-friendly interface, LootRandomizer Pro puts the power of dynamic loot generation at your fingertips.
 
 ### 3. Customizable Loot Parameters
 
-Want to adjust the rarity of loot drops? Fine-tune the distribution of magical items? With LootRandomizer Pro, you're in control. Our customizable loot parameters allow you to tailor the loot generation process to suit the unique needs of your campaign, ensuring that every loot drop feels balanced and rewarding.
+Want to adjust the rarity of loot drops? Fine-tune the distribution of magical items? With LootRandomizer Pro, you're in control. This customizable loot parameters allow you to tailor the loot generation process to suit the unique needs of your campaign, ensuring that every loot drop feels balanced and rewarding.
 
 ### 4. Comprehensive Loot Database
 
@@ -40,13 +40,9 @@ Getting started with LootRandomizer Pro is quick and easy:
 
 4. **Customize to Your Heart's Content**: Experiment with different loot parameters, explore the vast loot database, and unleash your creativity to enhance your D&D adventures like never before.
 
-## Feedback and Support
-
-At LootRandomizer Pro, we're committed to providing an unparalleled user experience for Dungeon Masters and players alike. Have feedback, suggestions, or need assistance? Don't hesitate to reach out to our dedicated support team. Your input is invaluable as we continue to evolve and improve LootRandomizer Pro to meet your needs.
-
 ## Contribute
 
-Interested in contributing to LootRandomizer Pro? We welcome contributions of all kinds, whether it's code improvements, feature suggestions, or bug fixes. Check out our contribution guidelines to get started and join us in shaping the future of dynamic loot generation in Dungeons & Dragons.
+Interested in contributing to LootRandomizer Pro? I welcome contributions of all kinds, whether it's code improvements, feature suggestions, or bug fixes. Check out the contribution guidelines to get started and join me in shaping the future of dynamic loot generation in Dungeons & Dragons.
 
 ## License
 
@@ -54,7 +50,7 @@ LootRandomizer Pro is licensed under the MIT License, which means you're free to
 
 ## About Us
 
-LootRandomizer Pro is developed and maintained by a passionate team of Dungeons & Dragons enthusiasts dedicated to enhancing the gaming experience for players and Dungeon Masters alike. Learn more about our team and our mission on our website.
+LootRandomizer Pro is developed and maintained by me, Andrew Brown, dedicated to enhancing the gaming experience for players and Dungeon Masters alike.
 
 ## Disclaimer
 

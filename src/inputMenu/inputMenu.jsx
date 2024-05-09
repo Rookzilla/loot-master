@@ -1,26 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InputCard from './inputCard/inputCard';
 import * as CSS from './inputMenu.styles.js';
 import useInputCard from './inputCard/useInputCard.jsx';
-import { CHALLANGE_RATINGS } from '../consts/staticConsts.js';
-import ItemDisplay from './itemDisplay/itemDisplay.jsx';
-import { generateLootItems } from './itemDisplay/itemDisplay.util.js';
+import ItemDisplay from './itemDisplay/itemDisplay';
+import { generateLootItems, calcCostReal } from './itemDisplay/itemDisplay.util.js';
 
 const InputMenu = () => {
     const { cardCount, handleAddCard, handleDeleteCard, formData, handleInputChange } = useInputCard();
+    const [displayData, setDisplayData] = useState([]);
 
-    // Calculate the total cash based on the CR values in formData
-    const totalCash = formData.reduce((total, data) => {
-        const crValue = parseFloat(data.challengeRating); // Parse the CR value to ensure numeric comparison
-        const crData = CHALLANGE_RATINGS.find(cr => cr.value === crValue); // Find CR data from the array
-        return total + (crData ? crData.reward : 0); // Add the reward if CR data is found, otherwise add 0
-    }, 0); // Initialize total to 0
+    const handleSave = () => {
+        setDisplayData(formData.map((data) => {
+            // Create a new object with the creatureName, creatureType, challengeRating, civilian, and loot properties
+            return {
+                creatureName: data.creatureName,
+                creatureType: data.creatureType,
+                challengeRating: data.challengeRating,
+                civilian: data.civilian,
+                loot: generateLootItems(calcCostReal(data.challengeRating), data.creatureType, data.civilian)
+            };
+        }));
+        
+    };
 
     return (
         <div style={CSS.MENU_CONTAINER_STYLES}>
+            { displayData.length > 0 && 
             <div style={CSS.LEFT_SUBCONTAINER_STYLES}>
-                <ItemDisplay items={generateLootItems(totalCash)} />
+                {[...Array(displayData.length)].map((_, index) => (
+                    <>
+                    <div style={CSS.BASIC_SUB_CONTAINER}>
+                    <p key={`creatureName-${index}`} style={CSS.NPC_TITLE}>{displayData[index].creatureName ?? `NPC ${index + 1}`}</p>
+                    </div>
+                    <ItemDisplay items={displayData[index].loot} />
+                    </>
+                ))}
+                
             </div>
+            }
             <div style={CSS.MENU_SUBCONTAINER_STYLES}>
                 {[...Array(cardCount)].map((_, index) => (
                     <InputCard
@@ -31,12 +48,20 @@ const InputMenu = () => {
                         handleDeleteCard={() => handleDeleteCard(index)}
                     />
                 ))}
+                <div style={CSS.OPTIONS_MENU}>
                 <img
                     alt="add entry"
                     src="https://cdn-icons-png.flaticon.com/512/262/262038.png"
                     style={CSS.ICON}
                     onClick={handleAddCard}
                 />
+                <img
+                    alt="save"
+                    src="https://cdn-icons-png.flaticon.com/512/1004/1004781.png"
+                    style={CSS.ICON}
+                    onClick={handleSave}
+                />
+                </div>
             </div>
         </div>
     );
