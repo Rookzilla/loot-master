@@ -1,4 +1,4 @@
-![image](https://github.com/Rookzilla/loot-master/assets/25509648/a248fee4-e46c-4188-ae10-5e78f41965fa)
+![image](https://github.com/Rookzilla/loot-master/assets/25509648/e487ac33-dab6-4250-9b77-bc966a68e6a5)
 
 # LootMaster: Empower Your Dungeons & Dragons Adventures!
 
