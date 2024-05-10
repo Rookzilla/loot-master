@@ -29,6 +29,7 @@ From enchanted weapons to mystical artifacts, LootMaster boasts a comprehensive 
 ### 5. Real-time Loot Preview
 
 Curious about what treasures await your party? With LootMaster's information feature, complex loot can be opened and described at a moments notice!
+
 ![image](https://github.com/Rookzilla/loot-master/assets/25509648/9fbe22b7-a69d-43b8-91dc-0e727c4ba13a)
 
 
