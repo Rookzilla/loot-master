@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 10px;
 }
 
 .App-link {
@@ -39,16 +40,18 @@
 
 .Title-text {
   color: white;
-  font-size: 60px;
+  font-size: 200%;
   font-family: 'UnifrakturCook', serif;
   font-weight: 400;
   font-style: normal;
+  text-align: center;
 }
 
 .Barcode-text {
   color: white;
-  font-size: 60px;
+  font-size: 190%;
   font-family: 'Libre Barcode 128 Text', cursive;
   font-weight: 400;
   font-style: normal;
+  text-align: center;
 }

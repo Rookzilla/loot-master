@@ -13,6 +13,7 @@ export const getCategoryColor = (category) => {
         jewel: '#45ffbd',
         nature: '#31a83f',
         drink: '#e069bb',
+        book: '#d8db81',
     };
     return colorMap[category] || '#ff00dd'; // Fallback color
 };

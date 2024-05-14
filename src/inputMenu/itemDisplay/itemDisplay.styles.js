@@ -20,7 +20,6 @@ export const ITEM_STYLES = {
     alignContent: "center",
     margin: "0 4px 4px 4px",
     width: "100%",
-    justifyContent: "flex-start",
     border: "2px solid #d9d4c3",
 };
 
@@ -45,9 +44,8 @@ export const ICON_STYLES = {
 export const DELETE_BUTTON = {
     width: "16px",
     height: "16px",
+    margin: "0 10px 0 0",
 }
-
-
 
 
 export const ITEM_DETAILS_STYLES = {
@@ -58,7 +56,7 @@ export const ITEM_DETAILS_STYLES = {
 
 export const ITEM = {
     margin: "8px",
-    width: "130px",
+    width: "110px",
 }
 export const PRICE = {
     margin: "8px",
@@ -92,6 +90,7 @@ export const STATS = {
     display: "flex",
     flexDirection: "row",
     width: "100%",
+    justifyContent: "space-between",
 }
 
 export const INFO_ICON_STYLES = {

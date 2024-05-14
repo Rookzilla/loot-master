@@ -1,4 +1,4 @@
-import { MIDGROUND_COLOR, MENU_COLOR } from "../consts/staticConsts";
+import { MIDGROUND_COLOR } from "../consts/staticConsts";
 
 export const ICON = {
     alignItems: "center",
@@ -15,10 +15,31 @@ export const MENU_SUBCONTAINER_STYLES = {
     padding: "10px",
     display: "flex",
     flexDirection: "column",
+    flexWrap: "wrap",
     alignItems: "center",
     alignContent: "center",
     margin: "10px",
   };
+
+  export const MOBILE_MENU_SUBCONTAINER_STYLES = {
+    borderRadius: "10px",
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    margin: "10px",
+  };
+
+  export const MOBILE_MENU_STYLES = {
+    backgroundColor: MIDGROUND_COLOR,
+    borderRadius: "10px",
+    display: "column",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginBottom: '20px',
+    alignItems: "flex-start",
+    alignContent: "center",
+    width: "100%",
+  }
 
   export const LEFT_SUBCONTAINER_STYLES = {
     borderRadius: "10px",
@@ -26,7 +47,7 @@ export const MENU_SUBCONTAINER_STYLES = {
     display: "flex",
     flexDirection: "column",
     height: "100%",
-    margin: "10px 0px 10px 10px",
+    margin: "10px",
   };
 
 // Styled component for the form container
@@ -59,3 +80,5 @@ export const MENU_CONTAINER_STYLES = {
     flexDirection: "row",
     justifyContent: "space-between",
   }
+
+  

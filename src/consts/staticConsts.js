@@ -22,6 +22,7 @@ export const LOOT_TYPES = {
     INSTRUMENT: "instrument",
     TOOLS: "tools",
     DRINK: "drink",
+    BOOK: "book",
 }
 
 
@@ -80,8 +81,7 @@ export const ITEMS = [
     {name: 'Signet ring', cost: '5 gp', weight: '—', category: LOOT_TYPES.CLOTHES, cost_real: 500},
     {name: 'Clothes, cold weather', cost: '10 gp', weight: '8 lb.', category: LOOT_TYPES.CLOTHES, cost_real: 1000},
     {name: 'Clothes, fine', cost: '15 gp', weight: '6 lb.', category: LOOT_TYPES.CLOTHES, cost_real: 1500},
-    {name: 'Clothes, alt fashion', cost: '75 gp', weight: '4 lb.', category: LOOT_TYPES.CLOTHES, cost_real: 75000},
-    {name: 'Clothes, high fashion', cost: '150 gp', weight: '3 lb.', category: LOOT_TYPES.CLOTHES, cost_real: 15000},
+    {name: 'Clothes, formal', cost: '75 gp', weight: '4 lb.', category: LOOT_TYPES.CLOTHES, cost_real: 7500},
     {name: 'Clothes, highborn', cost: '750 gp', weight: '3 lb.', category: LOOT_TYPES.CLOTHES, cost_real: 75000},
     {name: 'Clothes, royal', cost: '1150 gp', weight: '3 lb.', category: LOOT_TYPES.CLOTHES, cost_real: 115000},
 
@@ -236,8 +236,6 @@ export const ITEMS = [
     {name: "Diamond", cost: '250 gp', weight: '1 lb.', category: LOOT_TYPES.JEWEL, cost_real: 25000},
     {name: "Heart of Toril", cost: '850 gp', weight: '1 lb.', category: LOOT_TYPES.JEWEL, cost_real: 85000},
 
-    
-
     // Simple Melee Weapons
     {name: 'Club', cost: '1 sp', dmg: '1d4 B', weight: '2 lb.', properties: 'Finesse Weapon, Thrown Rg(20/60)', category: LOOT_TYPES.WEAPON, cost_real: 10},
     {name: 'Dagger', cost: '2 cp', dmg: '1d4 P', weight: '1 lb.', properties: 'Finesse Weapon, Thrown Rg(20/60)', category: LOOT_TYPES.WEAPON, cost_real: 2},
@@ -346,11 +344,34 @@ export const ITEMS = [
     {name: "Poitín, The Halfling's Curse", cost: "30 gp", weight: "1 lb.", category: LOOT_TYPES.DRINK, cost_real: 2999},
     {name: "Brandy, Jean-Claude's Bugle", cost: "50 gp", weight: "1 lb.", category: LOOT_TYPES.DRINK, cost_real: 4999},
     {name: "Brandy, Gooseliver Vim XO", cost: "100 gp", weight: "1 lb.", category: LOOT_TYPES.DRINK, cost_real: 9999},
+
+    // Books
+    {name: "At Heights Unknown", cost: "15 cp", weight: "1 lb.", category: LOOT_TYPES.BOOK, cost_real: 15, description: "A book telling the story of a partridge befriending a poodle and slaying a king. Read this book before you sleep on a long rest and you will gain +1 animal handling the next day."},
+    {name: "Tome of Arcane Wonders", cost: "11 gp", weight: "2 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1100, description: "A compendium of magical rituals and incantations from across the realms. Read this book before you sleep on a long rest and you will gain advantage on Arcana checks the next day."},
+    {name: "Chronicles of Eldritch Lore", cost: "115 sp", weight: "3 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1150, description: "Ancient texts detailing the forbidden knowledge of elder beings beyond the stars. Read this book before you sleep on a long rest and you will gain resistance to psychic damage the next day."},
+    {name: "Legends of the Silver Blade", cost: "18 sp", weight: "1.5 lbs.", category: LOOT_TYPES.BOOK, cost_real: 180, description: "Tales of valiant knights and their quests for honor and glory. Read this book before you sleep on a long rest and you will gain proficiency in one martial weapon of your choice the next day."},
+    {name: "Codex of Elemental Mastery", cost: "112 sp", weight: "2.5 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1120, description: "A comprehensive guide to harnessing the powers of fire, water, earth, and air. Read this book before you sleep on a long rest and you will gain resistance to one type of elemental damage of your choice the next day."},
+    {name: "Grimoire of Shadowy Secrets", cost: "12 gp", weight: "4 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1200, description: "Dark rituals and sinister spells bound within a cursed tome. Read this book before you sleep on a long rest and you will gain the ability to cast the 'Darkness' spell once the next day."},
+    {name: "The Alchemist's Handbook", cost: "125 sp", weight: "3 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1250, description: "Recipes and formulas for brewing potions and concoctions of all kinds. Read this book before you sleep on a long rest and you will gain advantage on checks related to potion brewing the next day."},
+    {name: "The Art of War", cost: "13 gp", weight: "2 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1300, description: "Strategies and tactics employed by legendary generals throughout history. Read this book before you sleep on a long rest and you will gain advantage on Intelligence checks related to battlefield tactics the next day."},
+    {name: "Songs of the Siren", cost: "118 sp", weight: "1 lb.", category: LOOT_TYPES.BOOK, cost_real: 1180, description: "Melodic verses recounting the enchanting songs of mermaids and sea nymphs. Read this book before you sleep on a long rest and you will gain advantage on Charisma checks when interacting with aquatic creatures the next day."},
+    {name: "Treatise on Celestial Bodies", cost: "114 sp", weight: "2 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1140, description: "Observations and theories regarding the movements of the stars and planets. Read this book before you sleep on a long rest and you will gain advantage on Intelligence checks related to astronomy the next day."},
+    {name: "Encyclopedia Arcana", cost: "122 sp", weight: "4 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1220, description: "A vast compilation of magical creatures, artifacts, and phenomena. Read this book before you sleep on a long rest and you will gain advantage on Arcana checks related to magical creatures the next day."},
+    {name: "Whispers from Beyond", cost: "116 sp", weight: "1.5 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1160, description: "Accounts of ghostly encounters and spectral phenomena from haunted locales. Read this book before you sleep on a long rest and you will gain advantage on Wisdom saving throws against fear the next day."},
+    {name: "The Herbalist's Guide", cost: "112 sp", weight: "2 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1120, description: "Illustrated descriptions of medicinal herbs and their healing properties. Read this book before you sleep on a long rest and you will gain advantage on Wisdom checks related to identifying and harvesting herbs the next day."},
+    {name: "Tales of the Feywild", cost: "118 sp", weight: "2 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1180, description: "Whimsical stories of faeries, pixies, and other denizens of the Feywild. Read this book before you sleep on a long rest and you will gain advantage on Charisma checks when dealing with fey creatures the next day."},
+    {name: "The Rogue's Handbook", cost: "12 gp", weight: "1.5 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1200, description: "Tips and tricks for thieves, assassins, and other practitioners of stealth. Read this book before you sleep on a long rest and you will gain advantage on Dexterity (Stealth) checks the next day."},
+    {name: "Mysteries of the Deep", cost: "124 sp", weight: "3 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1240, description: "Explorations of the hidden depths of the ocean and its myriad wonders. Read this book before you sleep on a long rest and you will gain advantage on Intelligence checks related to marine biology the next day."},
+    {name: "Guide to Legendary Weapons", cost: "128 sp", weight: "3 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1280, description: "Descriptions and histories of legendary swords, axes, and other arms. Read this book before you sleep on a long rest and you will gain proficiency in one exotic weapon of your choice the next day."},
+    {name: "Secrets of the Druids", cost: "126 sp", weight: "2.5 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1260, description: "Ancient wisdom passed down by the druidic orders, preserving the balance of nature. Read this book before you sleep on a long rest and you will gain advantage on Wisdom checks related to natural phenomena the next day."},
+    {name: "Curses and Hexes Unveiled", cost: "132 sp", weight: "2 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1320, description: "An examination of malevolent magic and methods for protection against curses. Read this book before you sleep on a long rest and you will gain advantage on saving throws against curses and hexes the next day."},
+    {name: "The Astral Navigator's Manual", cost: "13 gp", weight: "4 lbs.", category: LOOT_TYPES.BOOK, cost_real: 1300, description: "Guidance for travelers seeking to navigate the treacherous realms of the Astral Plane. Read this book before you sleep on a long rest and you will gain advantage on Intelligence checks related to planar navigation the next day."},
+    {name: "The Bard's Anthology", cost: "115 sp", weight: "1 lb.", category: LOOT_TYPES.BOOK, cost_real: 1150, description: "A collection of ballads, sonnets, and epic poems celebrating heroes and legends. Read this book before you sleep on a long rest and you will gain advantage on Charisma (Performance) checks the next day."},
 ]
 
 
 export const CHALLENGE_RATINGS = [
-    { name: '0', value: 0, reward: 0 },
+    { name: '0', value: 0, reward: 5 },
     { name: '1', value: 1, reward: 399 },
     { name: '2', value: 2, reward: 599 },
     { name: '3', value: 3, reward: 899 },
