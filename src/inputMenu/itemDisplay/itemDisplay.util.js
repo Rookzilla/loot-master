@@ -56,7 +56,8 @@ export const generateLootItems = (spendingCash, characterType, civilian) => {
         flexibleItemsList.sort((a, b) => b.cost_real - a.cost_real);
 
         // remove items that cost more than the remaining cash
-        const ecoList = flexibleItemsList.filter(item => item.cost_real < remainingCash);
+        const remainingFunds = remainingCash;
+        const ecoList = flexibleItemsList.filter(item => item.cost_real < remainingFunds);
         // take only the first 5 items of that list
         const top40items = ecoList.slice(0, 40);
         const item = selectRandomItem(top40items);
