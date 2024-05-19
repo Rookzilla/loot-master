@@ -1,16 +1,19 @@
 import { MIDGROUND_COLOR } from "../consts/staticConsts";
+import styled from "styled-components";
 
-export const ICON = {
-    alignItems: "center",
-    display: "flex",
-    padding: "10px",
-    width: "39px",                                                                                       
-    height: "39px",
-    margin: 0,
-    cursor: "pointer",
-}
+// remake icon as a styled component
+ const Icon = styled.img({
+  alignItems: "center",
+  display: "flex",
+  padding: "10px",
+  width: "39px",                                                                                       
+  height: "39px",
+  margin: 0,
+  cursor: "pointer",
+});
+
 // Styled component for the form container
-export const MENU_SUBCONTAINER_STYLES = {
+ const MENU_SUBCONTAINER_STYLES = {
     borderRadius: "10px",
     padding: "10px",
     display: "flex",
@@ -21,7 +24,7 @@ export const MENU_SUBCONTAINER_STYLES = {
     margin: "10px",
   };
 
-  export const MOBILE_MENU_SUBCONTAINER_STYLES = {
+   const MOBILE_MENU_SUBCONTAINER_STYLES = {
     borderRadius: "10px",
     display: "flex",
     flexDirection: "column",
@@ -29,7 +32,7 @@ export const MENU_SUBCONTAINER_STYLES = {
     margin: "10px",
   };
 
-  export const MOBILE_MENU_STYLES = {
+   const MOBILE_MENU_STYLES = {
     backgroundColor: MIDGROUND_COLOR,
     borderRadius: "10px",
     display: "column",
@@ -41,17 +44,17 @@ export const MENU_SUBCONTAINER_STYLES = {
     width: "100%",
   }
 
-  export const LEFT_SUBCONTAINER_STYLES = {
-    borderRadius: "10px",
-    padding: "10px",
-    display: "flex",
-    flexDirection: "column",
-    height: "100%",
-    margin: "10px",
-  };
+const LeftSubcontainer = styled.div`
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 10px;
+`;
 
 // Styled component for the form container
-export const MENU_CONTAINER_STYLES = {
+ const MENU_CONTAINER_STYLES = {
     backgroundColor: MIDGROUND_COLOR,
     borderRadius: "10px",
     display: "flex",
@@ -61,7 +64,7 @@ export const MENU_CONTAINER_STYLES = {
     alignContent: "center",
   };
 
-  export const NPC_TITLE = {
+   const NPC_TITLE = {
     display: "flex",
     fontWeight: "500",
     FontFace: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
@@ -69,16 +72,27 @@ export const MENU_CONTAINER_STYLES = {
     margin: "0 0 4px 10px",
   }
 
-  export const BASIC_SUB_CONTAINER = {
+   const BasicSubContainer = styled.div({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-  }
+  })
 
-  export const OPTIONS_MENU = {
+  const OptionsMenu = styled.div({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-  }
+  });
 
+  export {
+    Icon,
+    MENU_SUBCONTAINER_STYLES,
+    MENU_CONTAINER_STYLES,
+    NPC_TITLE,
+    BasicSubContainer,
+    OptionsMenu,
+    LeftSubcontainer,
+    MOBILE_MENU_SUBCONTAINER_STYLES,
+    MOBILE_MENU_STYLES,
+  }
   

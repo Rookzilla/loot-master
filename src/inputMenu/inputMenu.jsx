@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import InputCard from './inputCard/inputCard';
-import * as CSS from './inputMenu.styles.js';
+import InputCard from './inputCard/inputCard.jsx';
+import * as S from './inputMenu.styles.js';
 import useInputCard from './inputCard/useInputCard.jsx';
-import ItemDisplay from './itemDisplay/itemDisplay';
+import ItemDisplay from './itemDisplay/itemDisplay.jsx';
 import { generateLootItems, calcCostReal } from './itemDisplay/itemDisplay.util.js';
 
 const InputMenu = () => {
@@ -24,20 +24,20 @@ const InputMenu = () => {
     };
 
     return (
-        <div style={isMobile ? CSS.MOBILE_MENU_STYLES : CSS.MENU_CONTAINER_STYLES}>
+        <div style={isMobile ? S.MOBILE_MENU_STYLES : S.MENU_CONTAINER_STYLES}>
             { displayData.length > 0 && 
-            <div style={CSS.LEFT_SUBCONTAINER_STYLES}>
+            <S.LeftSubcontainer>
                 {[...Array(displayData.length)].map((_, index) => (
                     <>
-                    <div style={CSS.BASIC_SUB_CONTAINER}>
-                    <p key={`creatureName-${index}`} style={CSS.NPC_TITLE}>{displayData[index].creatureName ?? `NPC ${index + 1}`}</p>
-                    </div>
+                    <S.BasicSubContainer>
+                    <p key={`creatureName-${index}`} style={S.NPC_TITLE}>{displayData[index].creatureName ?? `NPC ${index + 1}`}</p>
+                    </S.BasicSubContainer>
                     <ItemDisplay items={displayData[index].loot} />
                     </>
                 ))}
-            </div>
+            </S.LeftSubcontainer>
             }
-            <div style={isMobile? CSS.MOBILE_MENU_SUBCONTAINER_STYLES : CSS.MENU_SUBCONTAINER_STYLES}>
+            <div style={isMobile? S.MOBILE_MENU_SUBCONTAINER_STYLES : S.MENU_SUBCONTAINER_STYLES}>
                 {[...Array(cardCount)].map((_, index) => (
                     <InputCard
                         key={`index-${index}`}
@@ -47,28 +47,25 @@ const InputMenu = () => {
                         handleDeleteCard={() => handleDeleteCard(index)}
                     />
                 ))}
-                <div style={CSS.OPTIONS_MENU}>
+                <S.OptionsMenu>
                 {isMobile && // delete entry
-                <img
+                <S.Icon
                     alt="delete entry"
                     src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
-                    style={CSS.ICON}
                     onClick={() => handleDeleteCard(1)}
                 />
                 }
-                <img
+                <S.Icon
                     alt="add entry"
                     src="https://cdn-icons-png.flaticon.com/512/262/262038.png"
-                    style={CSS.ICON}
                     onClick={handleAddCard}
                 />
-                <img
+                <S.Icon
                     alt="save"
                     src="https://cdn-icons-png.flaticon.com/512/1004/1004781.png"
-                    style={CSS.ICON}
                     onClick={handleSave}
                 />
-                </div>
+                </S.OptionsMenu>
             </div>
         </div>
     );
