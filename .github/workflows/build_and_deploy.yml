@@ -37,6 +37,9 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v4
 
+    - name: Verify build directory
+      run: ls -la build
+
     - name: Install AWS CLI
       run: |
         sudo apt-get update
