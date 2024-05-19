@@ -21,7 +21,6 @@ const InputMenu = () => {
                 loot: generateLootItems(calcCostReal(data.challengeRating), data.creatureType, data.civilian)
             };
         }));
-        
     };
 
     return (
@@ -36,7 +35,6 @@ const InputMenu = () => {
                     <ItemDisplay items={displayData[index].loot} />
                     </>
                 ))}
-                
             </div>
             }
             <div style={isMobile? CSS.MOBILE_MENU_SUBCONTAINER_STYLES : CSS.MENU_SUBCONTAINER_STYLES}>

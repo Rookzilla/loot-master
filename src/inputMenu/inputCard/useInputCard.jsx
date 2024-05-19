@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function useInputCard() {
+const useInputCard = () => {
     const [cardCount, setCardCount] = useState(1);
     const [formData, setFormData] = useState([]);
 
@@ -21,6 +21,18 @@ function useInputCard() {
     };
 
     const handleInputChange = (index, fieldName, value) => {
+        if (fieldName === "challengeRating") {
+            const tempVal = parseInt(value);
+            if (isNaN(tempVal)) {
+                value = "1";
+            }
+            if (tempVal > 20) {
+                value = "20";
+            }
+            if (tempVal < 1) {
+                value = "1";
+            }
+        }
         // Update the form data for the specific input field
         setFormData(prevFormData => {
             const updatedFormData = [...prevFormData];

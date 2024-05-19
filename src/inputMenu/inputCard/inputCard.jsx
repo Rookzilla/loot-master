@@ -5,8 +5,6 @@ import { creatureOptions } from './inputCard.consts.jsx';
 const InputCard = ({ index, formData, handleDeleteCard, handleInputChange }) => {
 
     const isMobile = window.innerWidth <= 768;
-
-    formData.challangeRating = 1
     
     return (
         !isMobile ? 
