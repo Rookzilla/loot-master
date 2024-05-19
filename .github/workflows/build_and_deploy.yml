@@ -47,4 +47,4 @@ jobs:
         aws-region: eu-west-2
 
     - name: Deploy to AWS
-      run: aws s3 sync loot_master/build/ s3://bucket-static-site-loot-master
+      run: aws s3 sync build/ s3://bucket-static-site-loot-master
