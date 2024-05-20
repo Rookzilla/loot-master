@@ -5,7 +5,7 @@ import { fetchData } from '../../api/api';
 const useInputCard = () => {
     const [cardCount, setCardCount] = useState(1);
     const [formData, setFormData] = useState([]);
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 

@@ -36,7 +36,8 @@ export const generateLootItems = (spendingCash, characterType, civilian, items) 
         return gearList[randomIndex];
     };
 
-    const uniqueList = [...items];
+    console.log(items)
+    const uniqueList = [...items.message];
 
     // Continue selecting items until spending cash is exhausted or limit is reached
     while (remainingCash > 5 && lootItems.length < (civilian || characterType === "Beast" ? 1 : Math.floor(Math.random() * 2) + 7)) {
