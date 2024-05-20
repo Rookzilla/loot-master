@@ -1,17 +1,19 @@
 
 // https://dungeonmastertools.github.io/items.html
 
-export const CREATURES = [
+const API_ENDPOINT = 'https://jqo8jktdd3.execute-api.eu-west-2.amazonaws.com/dev/get_loot';
+
+ const CREATURES = [
     { label: "Humanoid" },
     { label: "Beast" },
 ];
 
-export const CREATURE_NAMES = {
+ const CREATURE_NAMES = {
     HUMANOID: "Humanoid",
     BEAST: "Beast",
 }
 
-export const LOOT_TYPES = {
+ const LOOT_TYPES = {
     AMMUNITION: "ammunition",
     ARCANA: "arcana",
     MISC: "misc",
@@ -25,15 +27,10 @@ export const LOOT_TYPES = {
     BOOK: "book",
 }
 
+ const BODY_COLOR = "#BB6B5A";
+ const MIDGROUND_COLOR = "#8C7870";
 
-export const ITEM_COLORS = [
-
-]
-
-export const BODY_COLOR = "#BB6B5A";
-export const MIDGROUND_COLOR = "#8C7870";
-
-export const ITEMS = [
+ const ITEMS = [
     
     // Ammunition
     {name: 'Arrows (20)', cost: '1 gp', cost_real: 100, weight: '1 lb.', category: LOOT_TYPES.AMMUNITION},
@@ -370,7 +367,7 @@ export const ITEMS = [
 ]
 
 
-export const CHALLENGE_RATINGS = [
+ const CHALLENGE_RATINGS = [
     { name: '0', value: 0, reward: 5 },
     { name: '1', value: 1, reward: 399 },
     { name: '2', value: 2, reward: 599 },
@@ -393,3 +390,14 @@ export const CHALLENGE_RATINGS = [
     { name: '19', value: 19, reward: 105999 },
     { name: '20', value: 20, reward: 143899 },
 ]
+
+export {
+    CHALLENGE_RATINGS,
+    ITEMS,
+    MIDGROUND_COLOR,
+    BODY_COLOR,
+    CREATURES,
+    CREATURE_NAMES,
+    LOOT_TYPES,
+    API_ENDPOINT
+}

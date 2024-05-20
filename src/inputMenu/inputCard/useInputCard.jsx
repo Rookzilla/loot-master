@@ -1,26 +1,47 @@
-import { useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { fetchData } from '../../api/api';
+
 
 const useInputCard = () => {
     const [cardCount, setCardCount] = useState(1);
     const [formData, setFormData] = useState([]);
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    const handleAddCard = () => {
+    useEffect(() => {
+        const fetchDataAsync = async () => {
+        try {
+            const result = await fetchData();
+            setData(result);
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+        };
+
+        fetchDataAsync();
+    }, []);
+
+    const handleAddCard = useCallback(() => {
         setCardCount(prevCount => prevCount + 1);
         // Add an empty form data object for the new card
-        setFormData(prevFormData => [...prevFormData, { creatureType: '', challengeRating: '', civilian: false }]);
-    };
+        setFormData(prevFormData => [
+            ...prevFormData, 
+            { creatureType: '', challengeRating: '', civilian: false }
+        ]);
+    }, []);
 
-    const handleDeleteCard = (index) => {
-        // Remove the form data object for the deleted card
-        // if the index is 0, do not allow a deletion
+    const handleDeleteCard = useCallback((index) => {
         if (index === 0) {
             return;
         }
         setFormData(prevFormData => prevFormData.filter((_, i) => i !== index));
         setCardCount(prevCount => prevCount - 1 < 1 ? 1 : prevCount - 1);
-    };
+    }, []);
 
-    const handleInputChange = (index, fieldName, value) => {
+    const handleInputChange = useCallback((index, fieldName, value) => {
         if (fieldName === "challengeRating") {
             const tempVal = parseInt(value);
             if (isNaN(tempVal)) {
@@ -42,12 +63,12 @@ const useInputCard = () => {
             };
             return updatedFormData;
         });
-    };
+    }, []);
 
-    const handleSave = () => {
-        const savedData = formData
-        return savedData
-    };
+    const handleSave = useCallback(() => {
+        const savedData = formData;
+        return savedData;
+    }, [formData]);
 
     return {
         cardCount,
@@ -56,6 +77,9 @@ const useInputCard = () => {
         handleDeleteCard,
         handleInputChange,
         handleSave,
+        data,
+        loading,
+        error,
 }
 }
 export default useInputCard;

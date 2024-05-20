@@ -1,4 +1,4 @@
-import { ITEMS, CHALLENGE_RATINGS } from "../../consts/staticConsts";
+import { CHALLENGE_RATINGS } from "../../consts/staticConsts";
 
 export const getCategoryColor = (category) => {
     // Define color mappings based on category
@@ -27,9 +27,7 @@ export const calcCostReal = (challengeRating) => {
     return cr.reward * challengeRating;
 };
 
-export const generateLootItems = (spendingCash, characterType, civilian) => {
-    console.log("civilian")
-
+export const generateLootItems = (spendingCash, characterType, civilian, items) => {
     let remainingCash = spendingCash;
     const lootItems = [];
 
@@ -38,7 +36,7 @@ export const generateLootItems = (spendingCash, characterType, civilian) => {
         return gearList[randomIndex];
     };
 
-    const uniqueList = [...ITEMS];
+    const uniqueList = [...items];
 
     // Continue selecting items until spending cash is exhausted or limit is reached
     while (remainingCash > 5 && lootItems.length < (civilian || characterType === "Beast" ? 1 : Math.floor(Math.random() * 2) + 7)) {

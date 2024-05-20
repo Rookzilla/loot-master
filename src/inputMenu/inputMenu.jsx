@@ -6,7 +6,7 @@ import ItemDisplay from './itemDisplay/itemDisplay.jsx';
 import { generateLootItems, calcCostReal } from './itemDisplay/itemDisplay.util.js';
 
 const InputMenu = () => {
-    const { cardCount, handleAddCard, handleDeleteCard, formData, handleInputChange } = useInputCard();
+    const { cardCount, handleAddCard, handleDeleteCard, formData, handleInputChange, data:items } = useInputCard();
     const [displayData, setDisplayData] = useState([]);
     const isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
 
@@ -18,7 +18,7 @@ const InputMenu = () => {
                 creatureType: data.creatureType,
                 challengeRating: data.challengeRating,
                 civilian: data.civilian,
-                loot: generateLootItems(calcCostReal(data.challengeRating), data.creatureType, data.civilian)
+                loot: generateLootItems(calcCostReal(data.challengeRating), data.creatureType, data.civilian, items)
             };
         }));
     };
