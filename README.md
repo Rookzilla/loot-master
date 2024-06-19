@@ -68,3 +68,9 @@ LootMaster is intended for entertainment purposes only and is not affiliated wit
 ## Start Your Adventure Today!
 
 Ready to embark on a journey of endless excitement and adventure? Download LootMaster now and unlock the power of dynamic loot generation in your Dungeons & Dragons campaigns. May the dice roll ever in your favor! 🎲✨
+
+# The Technical Stuff
+
+Whilst this is a hobby project and certainly one I plan to keep supporting for the people that use it, I have to bundle some technical documentation into this as well. Starting with the resource diagram of what has been leveraged to create loot-master
+![image](https://github.com/Rookzilla/loot-master/assets/25509648/1be25d1b-b7aa-4eba-9da0-ce8d2e49256e)
+
