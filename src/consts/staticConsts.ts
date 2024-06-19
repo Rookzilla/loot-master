@@ -3,6 +3,8 @@
 
 const API_ENDPOINT = 'https://jqo8jktdd3.execute-api.eu-west-2.amazonaws.com/dev/get_loot';
 
+const CLOUDFRONT_URL = 'https://d1lagis5xvj1l8.cloudfront.net/loot-master/';
+
  const CREATURES = [
     { label: "Humanoid" },
     { label: "Beast" },
@@ -28,8 +30,8 @@ const API_ENDPOINT = 'https://jqo8jktdd3.execute-api.eu-west-2.amazonaws.com/dev
 }
 
  const BODY_COLOR = "#BB6B5A";
+ 
  const MIDGROUND_COLOR = "#8C7870";
-
 
  const CHALLENGE_RATINGS = [
     { name: '0', value: 0, reward: 5 },
@@ -62,5 +64,6 @@ export {
     CREATURES,
     CREATURE_NAMES,
     LOOT_TYPES,
-    API_ENDPOINT
+    API_ENDPOINT,
+    CLOUDFRONT_URL,
 }

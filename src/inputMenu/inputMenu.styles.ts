@@ -2,15 +2,15 @@ import { MIDGROUND_COLOR } from "../consts/staticConsts";
 import styled from "styled-components";
 
 // remake icon as a styled component
-const Icon = styled.img({
-  alignItems: "center",
-  display: "flex",
-  padding: "10px",
-  width: "39px",
-  height: "39px",
-  margin: 0,
-  cursor: "pointer",
-});
+const Icon = styled.img`
+  align-items: center;
+  display: flex;
+  padding: 10px;
+  width: 39px;
+  height: 39px;
+  margin: 0;
+  cursor: pointer;
+`;
 
 // Styled component for the form container
 const MENU_SUBCONTAINER_STYLES = {
@@ -35,7 +35,7 @@ const MOBILE_MENU_SUBCONTAINER_STYLES = {
 const MOBILE_MENU_STYLES = {
   backgroundColor: MIDGROUND_COLOR,
   borderRadius: "10px",
-  display: "column",
+  display: "flex",
   flexDirection: "row",
   flexWrap: "wrap",
   marginBottom: "20px",
@@ -67,22 +67,48 @@ const MENU_CONTAINER_STYLES = {
 const NPC_TITLE = {
   display: "flex",
   fontWeight: "500",
-  FontFace: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
-  fontSize: "16px",
+  fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+  fontSize: "1.2rem",
   margin: "0 0 4px 10px",
 };
 
-const BasicSubContainer = styled.div({
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-between",
-});
+const BasicSubContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
 
-const OptionsMenu = styled.div({
+const OptionsMenu = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+interface MenuProps {
+  isMobile: boolean;
+}
+
+const Menu = styled.div<MenuProps>(({ isMobile }) => ({
+  borderRadius: "10px",
+  padding: isMobile ? "10px" : undefined,
   display: "flex",
   flexDirection: "row",
-  justifyContent: "space-between",
-});
+  flexWrap: "wrap",
+  alignItems: "flex-start",
+  alignContent: "center",
+  margin: "10px",
+}));
+
+const SubContainer = styled.div<MenuProps>(({ isMobile }) => ({
+  borderRadius: "10px",
+  padding: isMobile ? "10px" : MENU_SUBCONTAINER_STYLES.padding,
+  display: "flex",
+  flexDirection: "column",
+  flexWrap: "wrap",
+  alignItems: "center",
+  alignContent: "center",
+  margin: "35px 10px 10px",
+}));
 
 export {
   Icon,
@@ -94,4 +120,6 @@ export {
   LeftSubcontainer,
   MOBILE_MENU_SUBCONTAINER_STYLES,
   MOBILE_MENU_STYLES,
+  Menu,
+  SubContainer,
 };

@@ -1,24 +1,24 @@
 import { useState, useCallback, useEffect } from 'react';
 import { fetchData } from '../../api/api';
-
+import { FormDataItem } from './inputCard.types';
 
 const useInputCard = () => {
-    const [cardCount, setCardCount] = useState(1);
-    const [formData, setFormData] = useState([]);
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [cardCount, setCardCount] = useState<number>(1);
+    const [formData, setFormData] = useState<FormDataItem[]>([]);
+    const [data, setData] = useState<any[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchDataAsync = async () => {
-        try {
-            const result = await fetchData();
-            setData(result);
-        } catch (err) {
-            setError(err.message);
-        } finally {
-            setLoading(false);
-        }
+            try {
+                const result: any = await fetchData();
+                setData(result);
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
         };
 
         fetchDataAsync();
@@ -28,12 +28,12 @@ const useInputCard = () => {
         setCardCount(prevCount => prevCount + 1);
         // Add an empty form data object for the new card
         setFormData(prevFormData => [
-            ...prevFormData, 
-            { creatureType: '', challengeRating: '', civilian: false }
+            ...prevFormData,
+            { creatureName: '', creatureType: '', challengeRating: '', civilian: false }
         ]);
     }, []);
 
-    const handleDeleteCard = useCallback((index) => {
+    const handleDeleteCard = useCallback((index: number) => {
         if (index === 0) {
             return;
         }
@@ -41,9 +41,9 @@ const useInputCard = () => {
         setCardCount(prevCount => prevCount - 1 < 1 ? 1 : prevCount - 1);
     }, []);
 
-    const handleInputChange = useCallback((index, fieldName, value) => {
+    const handleInputChange = useCallback((index: number, fieldName: keyof FormDataItem, value: string | boolean) => {
         if (fieldName === "challengeRating") {
-            const tempVal = parseInt(value);
+            const tempVal = parseInt(value as string);
             if (isNaN(tempVal)) {
                 value = "1";
             }
@@ -80,6 +80,7 @@ const useInputCard = () => {
         data,
         loading,
         error,
-}
-}
+    };
+};
+
 export default useInputCard;
