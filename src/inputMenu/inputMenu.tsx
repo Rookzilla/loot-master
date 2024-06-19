@@ -22,7 +22,6 @@ const InputMenu: React.FC = () => {
         formData,
         handleInputChange,
         data: items,
-        handleSave: handleSaveData
     } = useInputCard();
 
     const [displayData, setDisplayData] = useState<DisplayDataItem[]>([]);
