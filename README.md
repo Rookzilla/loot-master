@@ -1,5 +1,7 @@
 ![image](https://github.com/Rookzilla/loot-master/assets/25509648/e487ac33-dab6-4250-9b77-bc966a68e6a5)
 
+Accessible at: http://bucket-static-site-loot-master.s3-website.eu-west-2.amazonaws.com/
+
 # LootMaster: Empower Your Dungeons & Dragons Adventures!
 
 Welcome to LootMaster, the ultimate solution for Dungeon Masters and players alike to spice up their Dungeons & Dragons campaigns with unpredictable loot drops! 🎲✨
