@@ -1,8 +1,6 @@
-import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import FloatingLabelInput from './floatingLabelInput';
-import * as S from './floatingLabelInput.styles';
 
 describe('FloatingLabelInput component', () => {
   const mockProps = {

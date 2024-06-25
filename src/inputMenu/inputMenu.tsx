@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import InputCard from './inputCard/inputCard';
 import * as S from './inputMenu.styles';
 import useInputCard from './inputCard/useInputCard';
