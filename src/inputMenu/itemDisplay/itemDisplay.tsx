@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import * as S from './itemDisplay.styles';
 import { getCategoryColor } from './itemDisplay.util';
 import getImageFromCdn from '../../util/cdn';
 
     const ItemDisplay = ({ items }) => {
-
+    const isMobile = useMemo(() => window.innerWidth <= 768, []);    
     const [selectedItem, setSelectedItem] = useState(null);
     const handleItemClick = (index) => {
         setSelectedItem(index === selectedItem ? null : index);
@@ -20,11 +20,13 @@ import getImageFromCdn from '../../util/cdn';
                 <S.ItemStyles key={index} onClick={() => handleItemClick(index)} style={{border: `2px solid ${getCategoryColor(item.category)}`}}>
                     <S.StatsAndDescription>
                         <S.Stats>
+                    <S.ItemAndIcon>
                     <S.IconStylesWrapper style={{border: `2px solid ${getCategoryColor(item.category)}`, background: getCategoryColor(item.category)}}> 
                         <S.Icon src={getImageFromCdn(`${item.category}.png`)} alt="Item Icon" />
                     </S.IconStylesWrapper>
+                    <S.Item isMobile={isMobile} id={`item-${index}`}>{item.name}</S.Item>
+                    </S.ItemAndIcon>
                     <S.ItemDetails>
-                        <S.Item>{item.name}</S.Item>
                         <S.DescriptionWrapper> 
                             {item.description && <S.InfoIcon alt='info-icon' src={getImageFromCdn('info.png')}/>}
                         </S.DescriptionWrapper>

@@ -97,6 +97,7 @@ const Menu = styled.div<MenuProps>(({ isMobile }) => ({
   alignItems: "flex-start",
   alignContent: "center",
   margin: "10px",
+  justifyContent: 'center',
 }));
 
 const SubContainer = styled.div<MenuProps>(({ isMobile }) => ({

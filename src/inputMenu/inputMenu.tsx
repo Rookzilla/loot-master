@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import InputCard from './inputCard/inputCard';
 import * as S from './inputMenu.styles';
 import useInputCard from './inputCard/useInputCard';
 import ItemDisplay from './itemDisplay/itemDisplay';
 import { generateLootItems, calcCostReal } from './itemDisplay/itemDisplay.util';
 import getImageFromCdn from '../util/cdn';
+import { HANDHELD_SCREEN_WIDTH } from '../consts/staticConsts';
 
 interface DisplayDataItem {
     creatureName: string | undefined;
     creatureType: string;
     challengeRating: string;
     civilian: boolean;
-    loot: any[]; // Adjust this type based on your actual loot item structure
+    loot: any[];
 }
 
 const InputMenu: React.FC = () => {
@@ -25,7 +26,7 @@ const InputMenu: React.FC = () => {
     } = useInputCard();
 
     const [displayData, setDisplayData] = useState<DisplayDataItem[]>([]);
-    const isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
+    const isMobile = window.innerWidth <= HANDHELD_SCREEN_WIDTH;
 
     const handleSave = () => {
         const newDisplayData: DisplayDataItem[] = formData.map(data => ({

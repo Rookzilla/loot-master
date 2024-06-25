@@ -5,13 +5,15 @@ const API_ENDPOINT = 'https://jqo8jktdd3.execute-api.eu-west-2.amazonaws.com/dev
 
 const CLOUDFRONT_URL = 'https://d1lagis5xvj1l8.cloudfront.net/loot-master/';
 
+const HANDHELD_SCREEN_WIDTH = 768;
+
  const CREATURES = [
-    { label: "Humanoid" },
+    { label: "Human" },
     { label: "Beast" },
 ];
 
  const CREATURE_NAMES = {
-    HUMANOID: "Humanoid",
+    HUMANOID: "Human",
     BEAST: "Beast",
 }
 
@@ -66,4 +68,5 @@ export {
     LOOT_TYPES,
     API_ENDPOINT,
     CLOUDFRONT_URL,
+    HANDHELD_SCREEN_WIDTH,
 }

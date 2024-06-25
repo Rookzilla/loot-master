@@ -26,6 +26,7 @@ const ItemStyles = styled.div`
 `;
 
 const StatsAndDescription = styled.div`
+    align-items: center;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -36,6 +37,7 @@ const Stats = styled.div`
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
 `;
 
 const IconStylesWrapper = styled.div`
@@ -62,9 +64,22 @@ const ItemDetails = styled.div`
     flex-direction: row;
 `;
 
-const Item = styled.p`
-    margin: 10px;
-    width: 130px;
+const Item = styled.p<{ 
+    isMobile: boolean,
+  }>`
+  padding-left: 10px;
+  
+  ${({ isMobile }) => isMobile ? `
+    margin: 0;
+    max-width: 80px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 70px,
+` : `
+    margin: 10px,
+    width: 140px,
+`}
 `;
 
 const DescriptionWrapper = styled.div`
@@ -108,6 +123,11 @@ const Effect = styled.div`
     font-weight: 900;
 `;
 
+const ItemAndIcon = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 export {
     Container,
     ItemStyles,
@@ -124,4 +144,5 @@ export {
     DeleteButton,
     Description,
     Effect,
+    ItemAndIcon,
 };
